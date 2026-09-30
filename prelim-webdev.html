@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<style>
+		body {
+			display: flex;
+			min-height: 100vh;
+			align-items: center;
+			justify-content: center;
+			background-color: #cffff6;
+		}
+
+		.container {
+			display: flex;
+			background-color: white;
+			gap: 20px;
+		}
+
+		.box {
+			background-color: white;
+		}
+		.texttt {
+			font-size: 5px;
+		}
+
+		.image {
+			background-color: white;
+			background-repeat: no-repeat;
+		}
+
+		.header-text {
+			font-family: Helvetica;
+			letter-spacing: 4px;
+		}
+		
+		#canvas {
+			flex-direction: column;
+			height: 800px;
+			width: 600px;
+			padding: 20px;
+			background-color: white;
+		}
+
+		#header {
+			height: 5%;
+			width: 100%;
+			background-color: white;
+		}
+
+		#upper {
+			height: 35%;
+			width: 100%;
+		}
+		#center {
+			height: 20%;
+			width: 100%;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		#lower {
+			height: 40%;
+			width: 100%;
+		}
+
+		#header-left {
+			height: 100%;
+			width: 50%;
+		}
+
+
+		#header-right{
+			height: 100%;
+			width: 50%;
+			text-align: right;
+		}
+
+		.upper-part {
+			width: 16.7%;
+			height: 100%;	
+			gap: 20%;
+			background-color: white;
+		}
+
+		#upper-middle {
+			flex-direction: column;
+			width: 30%;
+			height: 100%; 
+		}
+
+		#upper-split {
+			height: 50%;
+			width: 100%;
+		}
+
+		#img1 {
+			background-image: url("miming2.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#img2 {
+			background-image: url("pexels-kasper-mahler-2152799217-32404316.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#img3 {
+			background-image: url("pexels-rene-36736791.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 30%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#img4 {
+			background-image: url("pexels-snow-chang-2148891262-34803680.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 60%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#img5 {
+			height: 50%;
+			width: 100%;
+			background-image: url("miming3.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#img6 {
+			height: 100%;
+			width: 50%;
+			background-image: url("pexels-verina-37726706-7179720.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#img7 {
+			height: 100%;
+			width: 50%;
+			background-image: url("miming4.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 65%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#lower-left {
+			flex-direction: column;
+			height: 100%;
+			width: 50%;
+		}
+
+		#img8 {
+			height: 100%;
+			width: 18%;
+			background-image: url("pexels-rob-wolfsbane-2495771-4510441.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+		
+		#lower-right {
+			flex-direction: column;
+			height: 100%;
+			width: 32%;
+		}
+
+		#right-upper-split {
+			height: 50%;
+			width: 100%;
+		}
+		
+
+		#img10 {
+			height: 100%;
+			width: 33%;
+			background-image: url("miming.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 40%;
+			background-position-y: 50%;
+			background-size: 500px;
+		}
+
+		#img11 {
+			height: 100%;
+			width: 33%;
+			background-image: url("pexels-konrads-photo-15852352.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 40%;
+			background-position-y: 30%;
+			background-size: 300px;
+		}
+
+		#img12 {
+			height: 100%;
+			width: 33%;
+			background-image: url("pexels-ahmetyuksek-35473564.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			background-size: 300px;
+		}
+
+		#img9 {
+			height: 50%;
+			width: 100%;
+			background-image: url("miming6.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 0%;
+			background-size: 300px;
+		}
+
+		#low-upper-split {
+			height: 15%;
+			width: 100%;
+		}
+
+		#img15 {
+			height: 85%;
+			width: 100%;
+			background-color: blue;
+			background-image: url("pexels-lilartsy-1132569.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 50%;
+			background-position-y: 15%;
+			background-size: 300px;
+		}
+
+		#img13 {
+			height: 100%;
+			width: 50%;
+			background-image: url("pexels-_ofarias-g-530112232-16565205.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 25%;
+			background-position-y: 44%;
+			background-size: 300px;
+		}
+
+
+		#img14 {
+			height: 100%;
+			width: 50%;
+			background-color: red;
+			background-image: url("pexels-_ofarias-g-530112232-16565205.jpg");
+			background-repeat: no-repeat;
+			background-position-x: 75%;
+			background-position-y: 44%;
+			background-size: 300px;
+		}
+
+
+		
+	</style>
+</head>
+	<div id="canvas" class="container">
+		<div id="header" class="container">
+			<div id ="header-left">
+				<p class="header-text">www.company.com</p>
+			</div>
+			<div id ="header-right">
+				<p class="header-text">BRAND 2019</p>
+			</div>
+		</div>
+
+		<div id="upper" class="container">
+			<div id="img1" class="upper-part">
+			</div>
+			
+			<div id="img2" class="upper-part">
+			</div>
+
+			<div id="upper-middle" class="container">
+				<div id="img5" class="box">
+				</div>
+
+				<div id="upper-split" class="container">
+					<div id="img6" class="box">
+					</div>
+
+					<div id="img7" class="box">
+					</div>
+				</div>
+			</div>
+
+			<div id="img3" class="upper-part">
+			</div>
+
+			<div id="img4" class="upper-part">
+			</div>
+		</div>
+
+		<div id="center" class="box">
+			<h1 class="header-text">HEADLINE</h1>
+			<h2 class="header-text" id="texttt">ABSTRACT FLYER</h2>
+		</div>
+
+		<div id="lower" class="container">
+			<div id="lower-left" class="container">
+				<div id="right-upper-split" class="container">
+					<div id="img10" class="box">
+					</div>
+
+					<div id="img11" class="box">
+					</div>
+
+					<div id="img12" class="box">
+					</div>
+				</div>
+
+				<div id="img9" class="box">
+				</div>
+			</div>
+			
+			<div id="img8" class="box">
+			</div>
+
+			<div id="lower-right" class="container">
+				<div id="low-upper-split" class="container">
+					<div id="img13" class="box">
+					</div>
+
+					<div id="img14" class="box">
+					</div>
+				</div>
+				<div id="img15" class="box">
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+<body>
+</body>
+</html>
